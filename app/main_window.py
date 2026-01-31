@@ -35,26 +35,25 @@ class MainWindow(QMainWindow):
         self.calculation_result: Optional[CalculationResult] = None
         self.autosave_path: Optional[str] = None
 
-        self._setup_ui()
-        self._setup_menu()
-        self._setup_statusbar()
-        self._setup_autosave()
-        self._connect_signals()
-        self._apply_font_scale()
-
-        self.setWindowTitle("Расчёт трудоёмкости разработки ПС — Новый проект")
-        self.resize(1200, 800)
-
         # Опорная ширина для масштабирования шрифтов (при этой ширине базовый размер)
         self._font_scale_reference_width = 1200
         self._font_base_point_size = 12
         self._font_min_point_size = 10
         self._font_max_point_size = 16
         self._last_applied_scale = 1.0
-        # Отложенное обновление шрифта при resize (чтобы не дергать на каждый пиксель)
         self._font_scale_timer = QTimer(self)
         self._font_scale_timer.setSingleShot(True)
         self._font_scale_timer.timeout.connect(self._apply_font_scale)
+
+        self._setup_ui()
+        self._setup_menu()
+        self._setup_statusbar()
+        self._setup_autosave()
+        self._connect_signals()
+
+        self.setWindowTitle("Расчёт трудоёмкости разработки ПС — Новый проект")
+        self.resize(1200, 800)
+        self._apply_font_scale()
 
     def _setup_ui(self):
         """Настройка интерфейса"""
