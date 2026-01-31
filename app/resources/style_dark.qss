@@ -1,0 +1,270 @@
+/* Тёмная тема — контрастный текст на тёмном фоне */
+
+QWidget {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    color: #E0E0E0;
+    background-color: #303030;
+}
+
+QMainWindow {
+    background-color: #252525;
+}
+
+QLabel {
+    color: #E0E0E0;
+}
+
+QGroupBox {
+    font-weight: 600;
+    font-size: 13px;
+    color: #BDBDBD;
+    border: 1px solid #424242;
+    border-radius: 6px;
+    margin-top: 12px;
+    padding: 12px 12px 8px 12px;
+    background-color: #383838;
+}
+
+QGroupBox::title {
+    subcontrol-origin: margin;
+    subcontrol-position: top left;
+    left: 12px;
+    padding: 0 8px;
+    background-color: #383838;
+    color: #BDBDBD;
+}
+
+QTabWidget::pane {
+    border: 1px solid #424242;
+    border-radius: 0 6px 6px 6px;
+    background-color: #383838;
+    top: -1px;
+}
+
+QTabBar::tab {
+    background-color: #424242;
+    color: #BDBDBD;
+    padding: 10px 20px;
+    margin-right: 2px;
+    border: 1px solid #424242;
+    border-bottom: none;
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+    font-weight: 500;
+}
+
+QTabBar::tab:selected {
+    background-color: #383838;
+    color: #64B5F6;
+    border-bottom: 2px solid #383838;
+    margin-bottom: -1px;
+}
+
+QTabBar::tab:hover:!selected {
+    background-color: #4E4E4E;
+}
+
+QLineEdit, QTextEdit, QSpinBox, QDoubleSpinBox, QComboBox {
+    border: 1px solid #555555;
+    border-radius: 4px;
+    padding: 6px 10px;
+    background-color: #424242;
+    color: #E0E0E0;
+    min-height: 20px;
+}
+
+QLineEdit:focus, QTextEdit:focus, QSpinBox:focus, QDoubleSpinBox:focus, QComboBox:focus {
+    border-color: #64B5F6;
+}
+
+QComboBox::drop-down {
+    border: none;
+}
+
+QComboBox QAbstractItemView {
+    background-color: #424242;
+    color: #E0E0E0;
+}
+
+QPushButton {
+    background-color: #4E4E4E;
+    color: #E0E0E0;
+    border: 1px solid #555555;
+    border-radius: 4px;
+    padding: 8px 16px;
+    font-weight: 500;
+}
+
+QPushButton:hover {
+    background-color: #5A5A5A;
+    border-color: #666666;
+}
+
+QPushButton:pressed {
+    background-color: #616161;
+}
+
+QPushButton:disabled {
+    background-color: #424242;
+    color: #757575;
+}
+
+QPushButton#primaryButton {
+    background-color: #1976D2;
+    color: #FFFFFF;
+    border: none;
+}
+
+QPushButton#primaryButton:hover {
+    background-color: #1E88E5;
+}
+
+QPushButton#primaryButton:pressed {
+    background-color: #1565C0;
+}
+
+QTableWidget {
+    border: 1px solid #424242;
+    border-radius: 4px;
+    background-color: #383838;
+    gridline-color: #424242;
+}
+
+QTableWidget::item {
+    padding: 8px;
+    color: #E0E0E0;
+}
+
+QTableWidget::item:selected {
+    background-color: #0D47A1;
+    color: #E3F2FD;
+}
+
+QHeaderView::section {
+    background-color: #424242;
+    color: #BDBDBD;
+    padding: 10px;
+    border: none;
+    border-right: 1px solid #424242;
+    border-bottom: 1px solid #424242;
+    font-weight: 600;
+}
+
+QTreeWidget {
+    border: 1px solid #424242;
+    border-radius: 4px;
+    background-color: #383838;
+}
+
+QTreeWidget::item {
+    padding: 6px;
+    color: #E0E0E0;
+}
+
+QTreeWidget::item:selected {
+    background-color: #0D47A1;
+    color: #E3F2FD;
+}
+
+QTreeWidget::item:hover {
+    background-color: #4E4E4E;
+}
+
+QStatusBar {
+    background-color: #383838;
+    color: #BDBDBD;
+    border-top: 1px solid #424242;
+    padding: 4px 8px;
+}
+
+QMenuBar {
+    background-color: #303030;
+    color: #E0E0E0;
+    border-bottom: 1px solid #424242;
+}
+
+QMenuBar::item:selected {
+    background-color: #0D47A1;
+    color: #E3F2FD;
+}
+
+QMenu {
+    background-color: #424242;
+    border: 1px solid #424242;
+}
+
+QMenu::item:selected {
+    background-color: #1976D2;
+    color: #FFFFFF;
+}
+
+QToolTip {
+    background-color: #616161;
+    color: #FFFFFF;
+    border: 1px solid #757575;
+    padding: 6px 10px;
+    border-radius: 4px;
+    font-size: 12px;
+}
+
+QScrollBar:vertical {
+    border: none;
+    background-color: #383838;
+    width: 10px;
+    border-radius: 5px;
+    margin: 0;
+}
+
+QScrollBar::handle:vertical {
+    background-color: #616161;
+    border-radius: 5px;
+    min-height: 24px;
+}
+
+QScrollBar::handle:vertical:hover {
+    background-color: #757575;
+}
+
+QScrollBar::add-line:vertical, QScrollBar::sub-line:vertical {
+    height: 0;
+}
+
+QScrollBar:horizontal {
+    border: none;
+    background-color: #383838;
+    height: 10px;
+    border-radius: 5px;
+}
+
+QScrollBar::handle:horizontal {
+    background-color: #616161;
+    border-radius: 5px;
+    min-width: 24px;
+}
+
+/* Блок формулы и подписи на вкладке результатов (тёмная тема) */
+QLabel#formulaLabel {
+    font-family: ui-monospace, "SF Mono", "Consolas", monospace;
+    font-size: 1.15em;
+    font-weight: 500;
+    background-color: #424242;
+    color: #E0E0E0;
+    padding: 14px 16px;
+    border: 1px solid #555555;
+    border-radius: 4px;
+}
+
+QGroupBox#base_group QLabel {
+    color: #E0E0E0;
+    font-size: 1.08em;
+}
+
+QLabel#baseLaborLabel {
+    font-weight: 600;
+    font-size: 1.08em;
+    color: #64B5F6;
+}
+
+QLabel#finalLaborLabel {
+    color: #81C784;
+}

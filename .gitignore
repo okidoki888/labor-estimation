@@ -1,0 +1,34 @@
+# Виртуальное окружение
+venv/
+.venv/
+env/
+
+# Сборка PyInstaller
+build/
+dist/
+*.spec.bak
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+*.egg
+*.egg-info/
+dist-eggs/
+*.manifest
+
+# Кэш и временные файлы
+*.log
+.cache/
+*.tmp
+.DS_Store
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
