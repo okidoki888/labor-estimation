@@ -1,0 +1,58 @@
+# Сборка standalone-приложения для Windows, Linux, macOS
+# Артефакты доступны в разделе Actions после завершения
+name: Build Standalone
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:  # Ручной запуск: Actions → Build Standalone → Run workflow
+
+jobs:
+  build:
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - os: ubuntu-latest
+            python: "3.12"
+            artifact: LabLaborEstimation
+            artifact-name: LabLaborEstimation-linux-x64
+          - os: windows-latest
+            python: "3.12"
+            artifact: LabLaborEstimation.exe
+            artifact-name: LabLaborEstimation-windows-x64
+          - os: macos-latest
+            python: "3.12"
+            artifact: LabLaborEstimation.app
+            artifact-name: LabLaborEstimation-macos
+
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python }}
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Build with PyInstaller
+        run: pyinstaller -y labor_estimation.spec
+
+      - name: Upload artifact (Linux/Windows)
+        if: matrix.os != 'macos-latest'
+        uses: actions/upload-artifact@v4
+        with:
+          name: ${{ matrix.artifact-name }}
+          path: dist/${{ matrix.artifact }}
+
+      - name: Upload artifact (macOS - .app)
+        if: matrix.os == 'macos-latest'
+        uses: actions/upload-artifact@v4
+        with:
+          name: ${{ matrix.artifact-name }}
+          path: dist/LabLaborEstimation.app
